@@ -27,13 +27,4 @@ class SegmentTreeTest {
                 ()->assertEquals(4, s.getSun(4, 9, 1, size, 1))
         );
     }
-
-    @Test
-    void update() {
-        int[]  i = {0, 42, 125, 5123, 2312, 123, 5125, 123, 5125, 12, 123, 512, 1255, 15, 23, 123, 15, 15, 123, 512, 125, 123, 12,42, 123,512, 123, 321};
-        int size = i.length-1;
-        SegmentTree s = new SegmentTree(i);
-
-
-    }
 }

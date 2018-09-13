@@ -15,9 +15,9 @@ public class Heap {
     public void maHeapfy(int i){
         int larguest;
         int left=leftIndex(i), right = rightIndex(i);
-        if(left <= this.size && this.elemntes[left] > this.elemntes[i]) {larguest = left;}
+        if(left < this.size && this.elemntes[left] > this.elemntes[i]) {larguest = left;}
         else  {larguest = i;}
-        if(right <= this.size && this.elemntes[right] > this.elemntes[larguest]){larguest = right;}
+        if(right < this.size && this.elemntes[right] > this.elemntes[larguest]){larguest = right;}
         if(this.elemntes[i] != this.elemntes[larguest]){
             int aux = this.elemntes[i];
             this.elemntes[i] = this.elemntes[larguest];
@@ -26,13 +26,12 @@ public class Heap {
         }
     }
     public void BildMaxheap(){
-        for(int i = 0; i < this.size/2; i++){
+        for(int i = this.size/2; i >= 1; i--){
             maHeapfy(i);
         }
-        printHeap();
     }
     public void printHeap(){
-        for(int a = 0; a < this.size; a++){ System.out.print(this.elemntes[a] + " | "); }
+        for(int a = 0; a < this.size; a++){ System.out.print(this.elemntes[a] + ", "); }
         System.out.println();
     }
 

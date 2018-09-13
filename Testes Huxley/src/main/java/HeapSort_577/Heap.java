@@ -7,7 +7,7 @@ public class Heap {
         this.elemntes = new int[a.length+1];
         for(int i = 1; i <= a.length; i++){ this.elemntes[i] = a[i-1]; }
         this.maxsize = a.length;
-        this.size = a.length;
+        this.size = a.length-1;
         BildMaxheap();
     }
     private int paretIndex(int i){ return  i/2; }
@@ -29,13 +29,13 @@ public class Heap {
         }
     }
     public void BildMaxheap(){
-        for(int i = 1; i <= this.size/2; i++){
+        for(int i = this.size/2; i >= 1 ; i--){
             maxHeapfy(i);
         }
     }
     public int[] heapSort(){
-        int k = this.size;
-        int[] sorted = new int[this.size+1];
+        int k = this.size-1;
+        int[] sorted = new int[this.size];
         for(int i = this.size; i>=2; i--, k--){
             sorted[k] = this.elemntes[1];
 

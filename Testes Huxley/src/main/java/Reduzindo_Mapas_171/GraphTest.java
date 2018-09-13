@@ -1,4 +1,4 @@
-package Arvore_Geradora_Maxima_628;
+package Reduzindo_Mapas_171;
 
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +11,7 @@ class GraphTest {
         return true;
     }
     @Test
-    void edges(){
+    void addEdge() {
         Graph a  = new Graph(10);
         int[] test = new int[10];
 
@@ -37,9 +37,11 @@ class GraphTest {
         a.addEdge(7, 7, 12);
         test[7] = 12;
         assertTrue(equals(a.edges[7], test));
+
     }
+
     @Test
-    void geracoa(){
+    void prim() {
         Graph g = new Graph(4);
 
         g.addEdge(1, 2, -2);
@@ -55,31 +57,30 @@ class GraphTest {
         int[] i = {Integer.MAX_VALUE, 0, -3, -4};
         assertArrayEquals(i, g.dist);
 
-        g = new Graph(6);
-        g.addEdge(1, 2, 15);
-        g.addEdge(2, 1, 15);
+         g = new Graph(6);
+         g.addEdge(1, 2, 15);
+         g.addEdge(2, 1, 15);
 
-        g.addEdge(1, 3, 10);
-        g.addEdge(3, 1, 10);
+         g.addEdge(1, 3, 10);
+         g.addEdge(3, 1, 10);
 
-        g.addEdge(2, 3, 1);
-        g.addEdge(3, 2, 1);
+         g.addEdge(2, 3, 1);
+         g.addEdge(3, 2, 1);
 
-        g.addEdge(3, 4, 3);
-        g.addEdge(4, 3, 3);
+         g.addEdge(3, 4, 3);
+         g.addEdge(4, 3, 3);
 
-        g.addEdge(2, 4, 5);
-        g.addEdge(4, 2, 5);
+         g.addEdge(2, 4, 5);
+         g.addEdge(4, 2, 5);
 
-        g.addEdge(4, 5, 20);
-        g.addEdge(5, 3, 20);
+         g.addEdge(4, 5, 20);
+         g.addEdge(5, 3, 20);
 
-        g.prim(1);
+         g.prim(1);
 
-        i = new int[]{Integer.MAX_VALUE, 0, 1, 10, 3, 20};
+         i = new int[]{Integer.MAX_VALUE, 0, 1, 10, 3, 20};
 
-        assertArrayEquals(i, g.dist);
+         assertArrayEquals(i, g.dist);
 
     }
-
 }
